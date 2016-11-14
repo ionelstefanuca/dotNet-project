@@ -1,0 +1,10 @@
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\EF_WCF\bin\Debug\EF_WCF.pdb
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\EF_WCF\bin\Debug\EntityFramework.dll
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\EF_WCF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\EF_WCF\bin\Debug\EntityFramework.xml
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\EF_WCF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\EF_WCF\obj\Debug\EF_WCF.pdb
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\EF_WCF\bin\Debug\EF_WCF.dll.config
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\EF_WCF\bin\Debug\EF_WCF.dll
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\EF_WCF\obj\Debug\EF_WCF.dll
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\EF_WCF\obj\Debug\EF_WCF.csprojResolveAssemblyReference.cache

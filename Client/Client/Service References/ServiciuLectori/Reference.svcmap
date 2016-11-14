@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bed8b2ad-9a83-43b0-86ae-c9a11aaa1c0e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/ServiciuLectori" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiciuLectori.xsd" MetadataType="Schema" ID="9b67a3c7-e5b4-46ec-a69a-fdd5721966ff" SourceId="1" SourceUrl="http://localhost:8080/ServiciuLectori?xsd=xsd2" />
+    <MetadataFile FileName="ServiciuLectori1.xsd" MetadataType="Schema" ID="cf42b76b-8e5c-4ef3-ad95-2378381e7de7" SourceId="1" SourceUrl="http://localhost:8080/ServiciuLectori?xsd=xsd0" />
+    <MetadataFile FileName="ServiciuLectori.disco" MetadataType="Disco" ID="4e2d5998-7098-4d49-af8d-66ccbdf0eec3" SourceId="1" SourceUrl="http://localhost:8080/ServiciuLectori?disco" />
+    <MetadataFile FileName="ServiciuLectori2.xsd" MetadataType="Schema" ID="3c487e52-80ae-4ef5-8e34-10b6a984aa0d" SourceId="1" SourceUrl="http://localhost:8080/ServiciuLectori?xsd=xsd1" />
+    <MetadataFile FileName="ServiciuLectori.wsdl" MetadataType="Wsdl" ID="a4059937-3080-4da2-ab93-9a2513a2b9d4" SourceId="1" SourceUrl="http://localhost:8080/ServiciuLectori?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

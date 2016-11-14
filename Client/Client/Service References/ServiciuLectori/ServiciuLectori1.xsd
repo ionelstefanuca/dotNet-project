@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/ServiciuLectori?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EF_WCF" />
+  <xs:element name="GetDisciplinaById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisciplinaByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetDisciplinaByIdResult" nillable="true" type="q1:Disciplina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisciplinaByNume_Capitole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeDisciplina" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisciplinaByNume_CapitoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetDisciplinaByNume_CapitoleResult" nillable="true" type="q2:Disciplina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaDiscipline_CapitoleIntrebariRaspunsuri">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaDiscipline_CapitoleIntrebariRaspunsuriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListaDiscipline_CapitoleIntrebariRaspunsuriResult" nillable="true" type="q3:ArrayOfDisciplina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaDiscipline">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaDisciplineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListaDisciplineResult" nillable="true" type="q4:ArrayOfDisciplina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisciplinaUDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="d" nillable="true" type="q5:Disciplina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisciplinaUDIResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StergeDisciplina">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="d" nillable="true" type="q6:Disciplina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StergeDisciplinaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapitoleUDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="c" nillable="true" type="q7:Capitole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapitoleUDIResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCapitolByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nume" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCapitolByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetCapitolByNameResult" nillable="true" type="q8:Capitole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCapitolPentruTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeCapitol" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCapitolPentruTestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetCapitolPentruTestResult" nillable="true" type="q9:Capitole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaCursanti">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaCursantiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListaCursantiResult" nillable="true" type="q10:ArrayOfCursanti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CursantiUDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="c" nillable="true" type="q11:Cursanti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CursantiUDIResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntrebariUDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="intrebare" nillable="true" type="q12:Intrebari" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntrebariUDIResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaxIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMaxIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RaspunsuriUDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="r" nillable="true" type="q13:Raspunsuri" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RaspunsuriUDIResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntrebareByNume">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intrebare" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntrebareByNumeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetIntrebareByNumeResult" nillable="true" type="q14:Intrebari" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LectoriUDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="lector" nillable="true" type="q15:Lectori" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LectoriUDIResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaLectori">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaLectoriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListaLectoriResult" nillable="true" type="q16:ArrayOfLectori" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaLectoriPerDisciplina">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeDisciplina" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaLectoriPerDisciplinaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListaLectoriPerDisciplinaResult" nillable="true" type="q17:ArrayOfLectori" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLectorByCont">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cont" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLectorByContResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetLectorByContResult" nillable="true" type="q18:Lectori" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestCreatDeLectorUDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="test" nillable="true" type="q19:TestCreatDeLector" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestCreatDeLectorUDIResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntrebariTesteUDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="intrebare" nillable="true" type="q20:IntrebariTeste" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntrebariTesteUDIResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestCreatDeLectorByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeTest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestCreatDeLectorByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetTestCreatDeLectorByNameResult" nillable="true" type="q21:TestCreatDeLector" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaTesteCreateDeLector">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaTesteCreateDeLectorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListaTesteCreateDeLectorResult" nillable="true" type="q22:ArrayOfTestCreatDeLector" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCursantiCareDauTestulCreatDeLector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeTest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCursantiCareDauTestulCreatDeLectorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetCursantiCareDauTestulCreatDeLectorResult" nillable="true" type="q23:ArrayOfCursanti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaIntrebariTestCreatDeLectorByNumeTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeTest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaIntrebariTestCreatDeLectorByNumeTestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListaIntrebariTestCreatDeLectorByNumeTestResult" nillable="true" type="q24:ArrayOfIntrebari" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProgramareTestsUDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="programare" nillable="true" type="q25:ProgramareTest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProgramareTestsUDIResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaCursantiTestProgramatsUID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="lista" nillable="true" type="q26:ListaCursantiTestProgramat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaCursantiTestProgramatsUIDResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCursantByCont">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cont" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCursantByContResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetCursantByContResult" nillable="true" type="q27:Cursanti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProgramareTestByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nume" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProgramareTestByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetProgramareTestByNameResult" nillable="true" type="q28:ProgramareTest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListProgramareTests">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListProgramareTestsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListProgramareTestsResult" nillable="true" type="q29:ArrayOfProgramareTest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CurataBazaDeDate">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CurataBazaDeDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CurataBazaDeDateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeTest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramatResult" nillable="true" type="q30:ArrayOfIntrebari" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProgramareTestByNumeTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeTest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProgramareTestByNumeTestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetProgramareTestByNumeTestResult" nillable="true" type="q31:ProgramareTest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TesteSalvateInBazaDeDateUDI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="test" nillable="true" type="q32:TesteSalvateInBazaDeDate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TesteSalvateInBazaDeDateUDIResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFromListaCursantiTestProgramats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTest" type="xs:int" />
+        <xs:element minOccurs="0" name="idCursat" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFromListaCursantiTestProgramatsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListTesteCreateDeLectorByContLector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cont" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListTesteCreateDeLectorByContLectorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListTesteCreateDeLectorByContLectorResult" nillable="true" type="q33:ArrayOfTestCreatDeLector" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numeTest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTestResult" nillable="true" type="q34:ArrayOfCursanti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCursant" type="xs:int" />
+        <xs:element minOccurs="0" name="idTest" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLectorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/EF_WCF" minOccurs="0" name="GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLectorResult" nillable="true" type="q35:ArrayOfTesteSalvateInBazaDeDate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

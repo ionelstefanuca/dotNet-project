@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProiectModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ProiectModelStoreContainer">
+    <EntitySet Name="Capitoles" EntityType="ProiectModel.Store.Capitoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cursantis" EntityType="ProiectModel.Store.Cursantis" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Disciplinas" EntityType="ProiectModel.Store.Disciplinas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Intrebaris" EntityType="ProiectModel.Store.Intrebaris" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IntrebariTestes" EntityType="ProiectModel.Store.IntrebariTestes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IstoricTesteCreateDeLectoris" EntityType="ProiectModel.Store.IstoricTesteCreateDeLectoris" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IstoricTesteRezolvateNerezolvateDeCursants" EntityType="ProiectModel.Store.IstoricTesteRezolvateNerezolvateDeCursants" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Lectoris" EntityType="ProiectModel.Store.Lectoris" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ListaCursantiTestProgramats" EntityType="ProiectModel.Store.ListaCursantiTestProgramats" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProgramareTests" EntityType="ProiectModel.Store.ProgramareTests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Raspunsuris" EntityType="ProiectModel.Store.Raspunsuris" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TestCreatDeLectors" EntityType="ProiectModel.Store.TestCreatDeLectors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TesteSalvateInBazaDeDates" EntityType="ProiectModel.Store.TesteSalvateInBazaDeDates" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CapitoleIntrebari" Association="ProiectModel.Store.FK_CapitoleIntrebari">
+      <End Role="Capitoles" EntitySet="Capitoles" />
+      <End Role="Intrebaris" EntitySet="Intrebaris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DisciplinaCapitole" Association="ProiectModel.Store.FK_DisciplinaCapitole">
+      <End Role="Disciplinas" EntitySet="Disciplinas" />
+      <End Role="Capitoles" EntitySet="Capitoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CursantiIstoricTesteRezolvateNerezolvateDeCursant" Association="ProiectModel.Store.FK_CursantiIstoricTesteRezolvateNerezolvateDeCursant">
+      <End Role="Cursantis" EntitySet="Cursantis" />
+      <End Role="IstoricTesteRezolvateNerezolvateDeCursants" EntitySet="IstoricTesteRezolvateNerezolvateDeCursants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CursantiListaCursantiTestProgramat" Association="ProiectModel.Store.FK_CursantiListaCursantiTestProgramat">
+      <End Role="Cursantis" EntitySet="Cursantis" />
+      <End Role="ListaCursantiTestProgramats" EntitySet="ListaCursantiTestProgramats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CursantiTesteSalvateInBazaDeDate" Association="ProiectModel.Store.FK_CursantiTesteSalvateInBazaDeDate">
+      <End Role="Cursantis" EntitySet="Cursantis" />
+      <End Role="TesteSalvateInBazaDeDates" EntitySet="TesteSalvateInBazaDeDates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DisciplinaCursanti" Association="ProiectModel.Store.FK_DisciplinaCursanti">
+      <End Role="Disciplinas" EntitySet="Disciplinas" />
+      <End Role="Cursantis" EntitySet="Cursantis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DisciplinaLectori" Association="ProiectModel.Store.FK_DisciplinaLectori">
+      <End Role="Disciplinas" EntitySet="Disciplinas" />
+      <End Role="Lectoris" EntitySet="Lectoris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IntrebariIntrebariTeste" Association="ProiectModel.Store.FK_IntrebariIntrebariTeste">
+      <End Role="Intrebaris" EntitySet="Intrebaris" />
+      <End Role="IntrebariTestes" EntitySet="IntrebariTestes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IntrebariRaspunsuri" Association="ProiectModel.Store.FK_IntrebariRaspunsuri">
+      <End Role="Intrebaris" EntitySet="Intrebaris" />
+      <End Role="Raspunsuris" EntitySet="Raspunsuris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IntrebariTesteSalvateInBazaDeDate" Association="ProiectModel.Store.FK_IntrebariTesteSalvateInBazaDeDate">
+      <End Role="Intrebaris" EntitySet="Intrebaris" />
+      <End Role="TesteSalvateInBazaDeDates" EntitySet="TesteSalvateInBazaDeDates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCreatDeLectorIntrebariTeste" Association="ProiectModel.Store.FK_TestCreatDeLectorIntrebariTeste">
+      <End Role="TestCreatDeLectors" EntitySet="TestCreatDeLectors" />
+      <End Role="IntrebariTestes" EntitySet="IntrebariTestes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCreatDeLectorIstoricTesteCreateDeLectori" Association="ProiectModel.Store.FK_TestCreatDeLectorIstoricTesteCreateDeLectori">
+      <End Role="TestCreatDeLectors" EntitySet="TestCreatDeLectors" />
+      <End Role="IstoricTesteCreateDeLectoris" EntitySet="IstoricTesteCreateDeLectoris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCreatDeLectorIstoricTesteRezolvateNerezolvateDeCursant" Association="ProiectModel.Store.FK_TestCreatDeLectorIstoricTesteRezolvateNerezolvateDeCursant">
+      <End Role="TestCreatDeLectors" EntitySet="TestCreatDeLectors" />
+      <End Role="IstoricTesteRezolvateNerezolvateDeCursants" EntitySet="IstoricTesteRezolvateNerezolvateDeCursants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LectoriTestCreatDeLector" Association="ProiectModel.Store.FK_LectoriTestCreatDeLector">
+      <End Role="Lectoris" EntitySet="Lectoris" />
+      <End Role="TestCreatDeLectors" EntitySet="TestCreatDeLectors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProgramareTestListaCursantiTestProgramat" Association="ProiectModel.Store.FK_ProgramareTestListaCursantiTestProgramat">
+      <End Role="ProgramareTests" EntitySet="ProgramareTests" />
+      <End Role="ListaCursantiTestProgramats" EntitySet="ListaCursantiTestProgramats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCreatDeLectorProgramareTest" Association="ProiectModel.Store.FK_TestCreatDeLectorProgramareTest">
+      <End Role="TestCreatDeLectors" EntitySet="TestCreatDeLectors" />
+      <End Role="ProgramareTests" EntitySet="ProgramareTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCreatDeLectorTesteSalvateInBazaDeDate" Association="ProiectModel.Store.FK_TestCreatDeLectorTesteSalvateInBazaDeDate">
+      <End Role="TestCreatDeLectors" EntitySet="TestCreatDeLectors" />
+      <End Role="TesteSalvateInBazaDeDates" EntitySet="TesteSalvateInBazaDeDates" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Capitoles">
+    <Key>
+      <PropertyRef Name="IdCapitol" />
+    </Key>
+    <Property Name="IdCapitol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeCapitol" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DisciplinaIdDisciplina" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cursantis">
+    <Key>
+      <PropertyRef Name="IdCursant" />
+    </Key>
+    <Property Name="IdCursant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContCursant" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Parola" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DisciplinaIdDisciplina" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Disciplinas">
+    <Key>
+      <PropertyRef Name="IdDisciplina" />
+    </Key>
+    <Property Name="IdDisciplina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeDisciplina" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Intrebaris">
+    <Key>
+      <PropertyRef Name="IdIntrebare" />
+    </Key>
+    <Property Name="IdIntrebare" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Intrebarea" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CapitoleIdCapitol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IntrebariTestes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestCreatDeLectorIdTest" Type="int" Nullable="false" />
+    <Property Name="IntrebariIdIntrebare" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IstoricTesteCreateDeLectoris">
+    <Key>
+      <PropertyRef Name="IdIstoricTeste" />
+    </Key>
+    <Property Name="IdIstoricTeste" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestCreatDeLectorIdTest" Type="int" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IstoricTesteRezolvateNerezolvateDeCursants">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestCreatDeLectorIdTest" Type="int" Nullable="false" />
+    <Property Name="CursantiIdCursant" Type="int" Nullable="false" />
+    <Property Name="Rezolvat" Type="bit" Nullable="false" />
+    <Property Name="Obligatoriu" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lectoris">
+    <Key>
+      <PropertyRef Name="IdLector" />
+    </Key>
+    <Property Name="IdLector" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContLector" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Parola" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DisciplinaIdDisciplina" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListaCursantiTestProgramats">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProgramareTestId" Type="int" Nullable="false" />
+    <Property Name="CursantiIdCursant" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProgramareTests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestCreatDeLectorIdTest" Type="int" Nullable="false" />
+    <Property Name="NumeTestProgramat" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Raspunsuris">
+    <Key>
+      <PropertyRef Name="IdRaspuns" />
+    </Key>
+    <Property Name="IdRaspuns" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Raspuns" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RaspunsCorect" Type="int" Nullable="false" />
+    <Property Name="MotivareRaspuns" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IntrebariIdIntrebare" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TestCreatDeLectors">
+    <Key>
+      <PropertyRef Name="IdTest" />
+    </Key>
+    <Property Name="IdTest" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeTest" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Timp" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LectoriIdLector" Type="int" Nullable="false" />
+    <Property Name="NrIntrebari" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TesteSalvateInBazaDeDates">
+    <Key>
+      <PropertyRef Name="CursantiIdCursant" />
+      <PropertyRef Name="IntrebariIdIntrebare" />
+      <PropertyRef Name="TestCreatDeLectorIdTest" />
+    </Key>
+    <Property Name="CursantiIdCursant" Type="int" Nullable="false" />
+    <Property Name="IntrebariIdIntrebare" Type="int" Nullable="false" />
+    <Property Name="TestCreatDeLectorIdTest" Type="int" Nullable="false" />
+    <Property Name="Raspuns" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="MotivareRaspuns" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CapitoleIntrebari">
+    <End Role="Capitoles" Type="ProiectModel.Store.Capitoles" Multiplicity="1" />
+    <End Role="Intrebaris" Type="ProiectModel.Store.Intrebaris" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Capitoles">
+        <PropertyRef Name="IdCapitol" />
+      </Principal>
+      <Dependent Role="Intrebaris">
+        <PropertyRef Name="CapitoleIdCapitol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DisciplinaCapitole">
+    <End Role="Disciplinas" Type="ProiectModel.Store.Disciplinas" Multiplicity="1" />
+    <End Role="Capitoles" Type="ProiectModel.Store.Capitoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplinas">
+        <PropertyRef Name="IdDisciplina" />
+      </Principal>
+      <Dependent Role="Capitoles">
+        <PropertyRef Name="DisciplinaIdDisciplina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CursantiIstoricTesteRezolvateNerezolvateDeCursant">
+    <End Role="Cursantis" Type="ProiectModel.Store.Cursantis" Multiplicity="1" />
+    <End Role="IstoricTesteRezolvateNerezolvateDeCursants" Type="ProiectModel.Store.IstoricTesteRezolvateNerezolvateDeCursants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cursantis">
+        <PropertyRef Name="IdCursant" />
+      </Principal>
+      <Dependent Role="IstoricTesteRezolvateNerezolvateDeCursants">
+        <PropertyRef Name="CursantiIdCursant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CursantiListaCursantiTestProgramat">
+    <End Role="Cursantis" Type="ProiectModel.Store.Cursantis" Multiplicity="1" />
+    <End Role="ListaCursantiTestProgramats" Type="ProiectModel.Store.ListaCursantiTestProgramats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cursantis">
+        <PropertyRef Name="IdCursant" />
+      </Principal>
+      <Dependent Role="ListaCursantiTestProgramats">
+        <PropertyRef Name="CursantiIdCursant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CursantiTesteSalvateInBazaDeDate">
+    <End Role="Cursantis" Type="ProiectModel.Store.Cursantis" Multiplicity="1" />
+    <End Role="TesteSalvateInBazaDeDates" Type="ProiectModel.Store.TesteSalvateInBazaDeDates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cursantis">
+        <PropertyRef Name="IdCursant" />
+      </Principal>
+      <Dependent Role="TesteSalvateInBazaDeDates">
+        <PropertyRef Name="CursantiIdCursant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DisciplinaCursanti">
+    <End Role="Disciplinas" Type="ProiectModel.Store.Disciplinas" Multiplicity="1" />
+    <End Role="Cursantis" Type="ProiectModel.Store.Cursantis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplinas">
+        <PropertyRef Name="IdDisciplina" />
+      </Principal>
+      <Dependent Role="Cursantis">
+        <PropertyRef Name="DisciplinaIdDisciplina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DisciplinaLectori">
+    <End Role="Disciplinas" Type="ProiectModel.Store.Disciplinas" Multiplicity="1" />
+    <End Role="Lectoris" Type="ProiectModel.Store.Lectoris" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplinas">
+        <PropertyRef Name="IdDisciplina" />
+      </Principal>
+      <Dependent Role="Lectoris">
+        <PropertyRef Name="DisciplinaIdDisciplina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IntrebariIntrebariTeste">
+    <End Role="Intrebaris" Type="ProiectModel.Store.Intrebaris" Multiplicity="1" />
+    <End Role="IntrebariTestes" Type="ProiectModel.Store.IntrebariTestes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Intrebaris">
+        <PropertyRef Name="IdIntrebare" />
+      </Principal>
+      <Dependent Role="IntrebariTestes">
+        <PropertyRef Name="IntrebariIdIntrebare" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IntrebariRaspunsuri">
+    <End Role="Intrebaris" Type="ProiectModel.Store.Intrebaris" Multiplicity="1" />
+    <End Role="Raspunsuris" Type="ProiectModel.Store.Raspunsuris" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Intrebaris">
+        <PropertyRef Name="IdIntrebare" />
+      </Principal>
+      <Dependent Role="Raspunsuris">
+        <PropertyRef Name="IntrebariIdIntrebare" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IntrebariTesteSalvateInBazaDeDate">
+    <End Role="Intrebaris" Type="ProiectModel.Store.Intrebaris" Multiplicity="1" />
+    <End Role="TesteSalvateInBazaDeDates" Type="ProiectModel.Store.TesteSalvateInBazaDeDates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Intrebaris">
+        <PropertyRef Name="IdIntrebare" />
+      </Principal>
+      <Dependent Role="TesteSalvateInBazaDeDates">
+        <PropertyRef Name="IntrebariIdIntrebare" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCreatDeLectorIntrebariTeste">
+    <End Role="TestCreatDeLectors" Type="ProiectModel.Store.TestCreatDeLectors" Multiplicity="1" />
+    <End Role="IntrebariTestes" Type="ProiectModel.Store.IntrebariTestes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestCreatDeLectors">
+        <PropertyRef Name="IdTest" />
+      </Principal>
+      <Dependent Role="IntrebariTestes">
+        <PropertyRef Name="TestCreatDeLectorIdTest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCreatDeLectorIstoricTesteCreateDeLectori">
+    <End Role="TestCreatDeLectors" Type="ProiectModel.Store.TestCreatDeLectors" Multiplicity="1" />
+    <End Role="IstoricTesteCreateDeLectoris" Type="ProiectModel.Store.IstoricTesteCreateDeLectoris" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestCreatDeLectors">
+        <PropertyRef Name="IdTest" />
+      </Principal>
+      <Dependent Role="IstoricTesteCreateDeLectoris">
+        <PropertyRef Name="TestCreatDeLectorIdTest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCreatDeLectorIstoricTesteRezolvateNerezolvateDeCursant">
+    <End Role="TestCreatDeLectors" Type="ProiectModel.Store.TestCreatDeLectors" Multiplicity="1" />
+    <End Role="IstoricTesteRezolvateNerezolvateDeCursants" Type="ProiectModel.Store.IstoricTesteRezolvateNerezolvateDeCursants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestCreatDeLectors">
+        <PropertyRef Name="IdTest" />
+      </Principal>
+      <Dependent Role="IstoricTesteRezolvateNerezolvateDeCursants">
+        <PropertyRef Name="TestCreatDeLectorIdTest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LectoriTestCreatDeLector">
+    <End Role="Lectoris" Type="ProiectModel.Store.Lectoris" Multiplicity="1" />
+    <End Role="TestCreatDeLectors" Type="ProiectModel.Store.TestCreatDeLectors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lectoris">
+        <PropertyRef Name="IdLector" />
+      </Principal>
+      <Dependent Role="TestCreatDeLectors">
+        <PropertyRef Name="LectoriIdLector" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProgramareTestListaCursantiTestProgramat">
+    <End Role="ProgramareTests" Type="ProiectModel.Store.ProgramareTests" Multiplicity="1" />
+    <End Role="ListaCursantiTestProgramats" Type="ProiectModel.Store.ListaCursantiTestProgramats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProgramareTests">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ListaCursantiTestProgramats">
+        <PropertyRef Name="ProgramareTestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCreatDeLectorProgramareTest">
+    <End Role="TestCreatDeLectors" Type="ProiectModel.Store.TestCreatDeLectors" Multiplicity="1" />
+    <End Role="ProgramareTests" Type="ProiectModel.Store.ProgramareTests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestCreatDeLectors">
+        <PropertyRef Name="IdTest" />
+      </Principal>
+      <Dependent Role="ProgramareTests">
+        <PropertyRef Name="TestCreatDeLectorIdTest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCreatDeLectorTesteSalvateInBazaDeDate">
+    <End Role="TestCreatDeLectors" Type="ProiectModel.Store.TestCreatDeLectors" Multiplicity="1" />
+    <End Role="TesteSalvateInBazaDeDates" Type="ProiectModel.Store.TesteSalvateInBazaDeDates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestCreatDeLectors">
+        <PropertyRef Name="IdTest" />
+      </Principal>
+      <Dependent Role="TesteSalvateInBazaDeDates">
+        <PropertyRef Name="TestCreatDeLectorIdTest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

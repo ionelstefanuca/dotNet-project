@@ -1,0 +1,180 @@
+﻿@model WebApplication.ServiceReference.TesteSalvateInBazaDeDate
+@{
+    ViewBag.Title = "Corecteaza Teste";
+    List<string> listaTeste = ViewBag.listTeste;
+    int contor = 0;
+    char aa = 'a';
+    string paranteza = ").";
+    string nn = "\n";
+}
+<h2>Corecteaza Teste</h2>
+<ul class="nav nav-tabs">
+    <li><a href="../Lector/AdaugaDisciplina">Gestionare Discipline</a></li>
+    <li><a href="../Lector/GestionareCursanti">Gestionare Cursanti</a></li>
+    <li><a href="../Lector/AdaugaIntrebari">Adauga Intrebari</a></li>
+    <li><a href="../Lector/ListareIntrebari">Listare Intrebari</a></li>
+    <li><a href="../Lector/Setari">Setari</a></li>
+    <li><a href="../Lector/ImportaIntrebari">Import</a></li>
+    <li><a href="../Lector/GenereazaTest">Genereaza Test</a></li>
+    <li><a href="../Lector/CreazaGrupaTest">Creaza Grupa Test</a></li>
+    <li class="active"><a href="../Lector/CorecteazaTest">Corecteaza test</a></li>
+</ul>
+<br />
+<br />
+<form class="form-inline" role="form" method="post">
+    <div class="form-group">
+        <label class="col-sm-2 control-label" style="width: 152px;">Selecteaza testul: </label>
+    </div>
+    <div class="form-group">
+        <select class="form-control" name="testSelectat">
+            @for (int i = 0; i < listaTeste.Count; i++)
+            {
+                <option>@listaTeste[i]</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default" name="CreazaGrupaTest" value="true">Submit</button>
+</form>
+<br />
+@{
+    if (Session["ViewBag.testSelectat"]!=null)
+    {
+        List<string> list = (List<string>)Session["ViewBag.testSelectat"];
+
+        <form class="form-inline" role="form" method="post">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" style="width: 152px;">Cursantii care au dat testul: </label>
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="cursantTestSelectat">
+                    @foreach (var a in list)
+                    {
+                        <option>@a</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default" name="IncepeCorectareTest" value="true">Incepe corectarea testului</button>
+        </form>
+    }
+}
+
+@{
+    if (Session["IndexIntrebareCurenta"] != null)
+    {
+        <br />
+        <hr />
+        <form class="form-inline" role="form" method="post">
+            <div class="form-group" style="margin-right: 2px; width: 100px; text-align: right;">
+                <label>@(Convert.ToInt32(Session["indexIntrebareCurenta"].ToString())+1).</label>
+            </div>
+            <div class="form-group">
+                <label style="font-weight: normal;">@Model.Intrebari.Intrebarea</label>
+            </div>
+
+            <br />
+            <div class="form-group" style="margin-right: 2px; width: 150px; text-align: right;">
+                <label></label>
+            </div>
+            <div class="form-group">
+                <label>Raspunsurile si justificarea date de student: </label>
+             </div>
+                <br />
+                @foreach (var a in Model.Intrebari.Raspunsuris)
+                {
+                    <div class="form-group" style="margin-right: 2px; width: 150px; text-align: right;">
+                        <label></label>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                @if (Model.Raspuns[contor] == '1')
+                                {
+                                    <input type="checkbox" name="@contor" checked> @aa@paranteza @a.Raspuns
+                                }
+                                else
+                                {
+                                    <input type="checkbox" name="@contor"> @aa@paranteza @a.Raspuns
+                                }
+                            </label>
+                        </div>
+                    </div>
+                    <br />
+                    contor++;
+                    aa++;
+                }
+            <div class="form-group" style="margin-right: 2px; width: 150px; text-align: right; padding-top: 9px;">
+                <label style="font-weight: normal;">Justificare:</label>
+            </div>
+            <div class="form-group" style="margin-top:2px; padding-top: 5px;">
+                <textarea style="height: 100px;" name="justificare" class="form-control" placeholder="Justificare data de student" rows="1" cols="200">@Model.MotivareRaspuns</textarea>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="form-group" style="margin-right: 2px; width: 150px; text-align: right;">
+                <label></label>
+            </div>
+            <div class="form-group">
+                <label>Raspunsurile corecte cu justificari:  </label>
+            </div>
+            @{ 
+                 contor = 0;
+                 aa = 'a';
+            }
+            <br />
+            @foreach (var a in Model.Intrebari.Raspunsuris)
+                {
+                <div class="form-group" style="margin-right: 2px; width: 150px; text-align: right;">
+                    <label></label>
+                </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                @if (a.RaspunsCorect == 1)
+                                {
+                                    <input type="checkbox" name="@contor" checked> @aa@paranteza @a.Raspuns
+                                }
+                                else
+                                {
+                                    <input type="checkbox" name="@contor"> @aa@paranteza @a.Raspuns
+                                }
+                            </label>
+                        </div>
+                    </div>
+                    <br />
+                contor++;
+                aa++;
+            }
+
+            <div class="form-group" style="margin-right: 2px; width: 150px; text-align: right; padding-top: 9px;">
+                <label style="font-weight: normal;">Justificare:</label>
+            </div>
+            <div class="form-group" style="margin-top:2px; padding-top: 5px;">
+                <textarea style="height: 100px;" name="justificare" class="form-control" placeholder="Justificare data de student" rows="1" cols="200">
+                    @foreach(var m in Model.Intrebari.Raspunsuris.Select(s => s.MotivareRaspuns).ToList().Distinct())
+                    {
+                        @m @nn
+                    }
+                </textarea>
+            </div>
+
+    <br />
+    <br />
+
+    <div class="form-group" style="margin-right: 2px; width: 150px; text-align: right; ">
+        <!--if (Convert.ToInt32(Session["indexIntrebareCurenta"].ToString()) != 1)-->
+        <!--{-->
+        <button type="submit" class="btn btn-default" name="prevBtn" value="true">Prev</button>
+        <!--}-->
+    </div>
+
+    <div class="form-group">
+        <!--if (Convert.ToInt32(Session["indexIntrebareCurenta"].ToString()) != Convert.ToInt32(Session["IntrebariTest"].ToString()))-->
+        <!--{-->
+        <button type="submit" class="btn btn-default" name="nextBtn" value="true">Next</button>
+        <!--}-->
+    </div>
+</form>
+    }
+}

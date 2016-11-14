@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Logare cursant";
+}
+<br />
+<br />
+@{
+    if (ViewBag.Eroare != null)
+    {
+        <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <strong>Logarea nu a reusit!</strong> Utilizatorul sau parola sunt gresite.
+        </div>
+    }
+
+    if (Session["testSalvaInBazaDeDate"] != null)
+    {
+        Session["testSalvaInBazaDeDate"] = null;
+        <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <strong>Foarte bine!</strong> Testul a fost salvat in baza de date.
+        </div>  
+    }
+}
+
+<br />
+<h2>Log in.</h2>
+<br />
+    <div class="col-md-8">
+        <section id="loginForm">
+            <h4>Utilizati un cont de cursant pentru a va putea autentifica</h4>
+            <hr>
+                <form class="form-horizontal" role="form" method="post">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Cont cursant: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Cont cursant" name="ContCursant">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Parola: </label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" placeholder="Parola cursant" name="parolaCursant">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+        </section>
+    </div>

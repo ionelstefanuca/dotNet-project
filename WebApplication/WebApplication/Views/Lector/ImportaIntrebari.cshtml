@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Importa Intrebari";
+}
+<ul class="nav nav-tabs">
+    <li><a href="../Lector/AdaugaDisciplina">Gestionare Discipline</a></li>
+    <li><a href="../Lector/GestionareCursanti">Gestionare Cursanti</a></li>
+    <li><a href="../Lector/AdaugaIntrebari">Adauga Intrebari</a></li>
+    <li><a href="../Lector/ListareIntrebari">Listare Intrebari</a></li>
+    <li><a href="../Lector/Setari">Setari</a></li>
+    <li class="active"><a href="../Lector/ImportaIntrebari">Import</a></li>
+    <li><a href="../Lector/GenereazaTest">Genereaza Test</a></li>
+    <li><a href="../Lector/CreazaGrupaTest">Creaza Grupa Test</a></li>
+    <li><a href="../Lector/CorecteazaTest">Corecteaza test</a></li>
+</ul>
+<h2>Importa Intrebari</h2>
+
+<div class="col-md-4">
+    <section id="socialLoginForm">
+        <h4>Importa date din fisier xml</h4>
+        <hr>
+        @using (Html.BeginForm("ImportaIntrebari",
+                                "Lector",
+                                FormMethod.Post,
+                                new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="file" id="file" /><br />
+            <input type="submit" value="Upload Image" />
+            <br>
+            @ViewBag.Message
+        }
+
+
+    </section>
+</div>

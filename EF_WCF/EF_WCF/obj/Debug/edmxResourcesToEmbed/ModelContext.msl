@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProiectModelStoreContainer" CdmEntityContainer="ModelContext">
+    <EntitySetMapping Name="Capitoles">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.Capitole)">
+        <MappingFragment StoreEntitySet="Capitoles">
+          <ScalarProperty Name="IdCapitol" ColumnName="IdCapitol" />
+          <ScalarProperty Name="NumeCapitol" ColumnName="NumeCapitol" />
+          <ScalarProperty Name="DisciplinaIdDisciplina" ColumnName="DisciplinaIdDisciplina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cursantis">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.Cursanti)">
+        <MappingFragment StoreEntitySet="Cursantis">
+          <ScalarProperty Name="IdCursant" ColumnName="IdCursant" />
+          <ScalarProperty Name="ContCursant" ColumnName="ContCursant" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+          <ScalarProperty Name="DisciplinaIdDisciplina" ColumnName="DisciplinaIdDisciplina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disciplinas">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.Disciplina)">
+        <MappingFragment StoreEntitySet="Disciplinas">
+          <ScalarProperty Name="IdDisciplina" ColumnName="IdDisciplina" />
+          <ScalarProperty Name="NumeDisciplina" ColumnName="NumeDisciplina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Intrebaris">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.Intrebari)">
+        <MappingFragment StoreEntitySet="Intrebaris">
+          <ScalarProperty Name="IdIntrebare" ColumnName="IdIntrebare" />
+          <ScalarProperty Name="Intrebarea" ColumnName="Intrebarea" />
+          <ScalarProperty Name="CapitoleIdCapitol" ColumnName="CapitoleIdCapitol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IntrebariTestes">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.IntrebariTeste)">
+        <MappingFragment StoreEntitySet="IntrebariTestes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TestCreatDeLectorIdTest" ColumnName="TestCreatDeLectorIdTest" />
+          <ScalarProperty Name="IntrebariIdIntrebare" ColumnName="IntrebariIdIntrebare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IstoricTesteCreateDeLectoris">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.IstoricTesteCreateDeLectori)">
+        <MappingFragment StoreEntitySet="IstoricTesteCreateDeLectoris">
+          <ScalarProperty Name="IdIstoricTeste" ColumnName="IdIstoricTeste" />
+          <ScalarProperty Name="TestCreatDeLectorIdTest" ColumnName="TestCreatDeLectorIdTest" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IstoricTesteRezolvateNerezolvateDeCursants">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.IstoricTesteRezolvateNerezolvateDeCursant)">
+        <MappingFragment StoreEntitySet="IstoricTesteRezolvateNerezolvateDeCursants">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TestCreatDeLectorIdTest" ColumnName="TestCreatDeLectorIdTest" />
+          <ScalarProperty Name="CursantiIdCursant" ColumnName="CursantiIdCursant" />
+          <ScalarProperty Name="Rezolvat" ColumnName="Rezolvat" />
+          <ScalarProperty Name="Obligatoriu" ColumnName="Obligatoriu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lectoris">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.Lectori)">
+        <MappingFragment StoreEntitySet="Lectoris">
+          <ScalarProperty Name="IdLector" ColumnName="IdLector" />
+          <ScalarProperty Name="ContLector" ColumnName="ContLector" />
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+          <ScalarProperty Name="DisciplinaIdDisciplina" ColumnName="DisciplinaIdDisciplina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListaCursantiTestProgramats">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.ListaCursantiTestProgramat)">
+        <MappingFragment StoreEntitySet="ListaCursantiTestProgramats">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProgramareTestId" ColumnName="ProgramareTestId" />
+          <ScalarProperty Name="CursantiIdCursant" ColumnName="CursantiIdCursant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramareTests">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.ProgramareTest)">
+        <MappingFragment StoreEntitySet="ProgramareTests">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TestCreatDeLectorIdTest" ColumnName="TestCreatDeLectorIdTest" />
+          <ScalarProperty Name="NumeTestProgramat" ColumnName="NumeTestProgramat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Raspunsuris">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.Raspunsuri)">
+        <MappingFragment StoreEntitySet="Raspunsuris">
+          <ScalarProperty Name="IdRaspuns" ColumnName="IdRaspuns" />
+          <ScalarProperty Name="Raspuns" ColumnName="Raspuns" />
+          <ScalarProperty Name="RaspunsCorect" ColumnName="RaspunsCorect" />
+          <ScalarProperty Name="MotivareRaspuns" ColumnName="MotivareRaspuns" />
+          <ScalarProperty Name="IntrebariIdIntrebare" ColumnName="IntrebariIdIntrebare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestCreatDeLectors">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.TestCreatDeLector)">
+        <MappingFragment StoreEntitySet="TestCreatDeLectors">
+          <ScalarProperty Name="IdTest" ColumnName="IdTest" />
+          <ScalarProperty Name="NumeTest" ColumnName="NumeTest" />
+          <ScalarProperty Name="Timp" ColumnName="Timp" />
+          <ScalarProperty Name="LectoriIdLector" ColumnName="LectoriIdLector" />
+          <ScalarProperty Name="NrIntrebari" ColumnName="NrIntrebari" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TesteSalvateInBazaDeDates">
+      <EntityTypeMapping TypeName="IsTypeOf(ProiectModel.TesteSalvateInBazaDeDate)">
+        <MappingFragment StoreEntitySet="TesteSalvateInBazaDeDates">
+          <ScalarProperty Name="CursantiIdCursant" ColumnName="CursantiIdCursant" />
+          <ScalarProperty Name="IntrebariIdIntrebare" ColumnName="IntrebariIdIntrebare" />
+          <ScalarProperty Name="TestCreatDeLectorIdTest" ColumnName="TestCreatDeLectorIdTest" />
+          <ScalarProperty Name="Raspuns" ColumnName="Raspuns" />
+          <ScalarProperty Name="MotivareRaspuns" ColumnName="MotivareRaspuns" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

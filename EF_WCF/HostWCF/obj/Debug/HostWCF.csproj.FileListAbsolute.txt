@@ -1,0 +1,15 @@
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\bin\Debug\HostWCF.exe.config
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\bin\Debug\HostWCF.exe
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\bin\Debug\HostWCF.pdb
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\bin\Debug\EntityFramework.dll
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\bin\Debug\EF_WCF.pdb
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\bin\Debug\EntityFramework.xml
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\obj\Debug\HostWCF.csprojResolveAssemblyReference.cache
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\obj\Debug\HostWCF.Form1.resources
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\obj\Debug\HostWCF.Properties.Resources.resources
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\obj\Debug\HostWCF.csproj.GenerateResource.Cache
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\obj\Debug\HostWCF.exe
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\obj\Debug\HostWCF.pdb
+C:\Users\ionel\Google Drive\proiect dotNet\EF_WCF\HostWCF\bin\Debug\EF_WCF.dll

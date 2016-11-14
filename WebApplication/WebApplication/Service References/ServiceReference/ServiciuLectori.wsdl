@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiciuLectori" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/ServiciuLectori?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/ServiciuLectori?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/ServiciuLectori?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EF_WCF" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiciuLectori_LogareLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogareLector" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_LogareLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogareLectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_Logare_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logare" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_Logare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetDisciplinaById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisciplinaById" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetDisciplinaById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisciplinaByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetDisciplinaByNume_Capitole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisciplinaByNume_Capitole" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetDisciplinaByNume_Capitole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisciplinaByNume_CapitoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaDiscipline_CapitoleIntrebariRaspunsuri_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDiscipline_CapitoleIntrebariRaspunsuri" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaDiscipline_CapitoleIntrebariRaspunsuri_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDiscipline_CapitoleIntrebariRaspunsuriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaDiscipline_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDiscipline" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaDiscipline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDisciplineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_DisciplinaUDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisciplinaUDI" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_DisciplinaUDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisciplinaUDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_StergeDisciplina_InputMessage">
+    <wsdl:part name="parameters" element="tns:StergeDisciplina" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_StergeDisciplina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StergeDisciplinaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_CapitoleUDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapitoleUDI" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_CapitoleUDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapitoleUDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetCapitolByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCapitolByName" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetCapitolByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCapitolByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetCapitolPentruTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCapitolPentruTest" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetCapitolPentruTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCapitolPentruTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaCursanti_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCursanti" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaCursanti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCursantiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_CursantiUDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:CursantiUDI" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_CursantiUDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CursantiUDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_IntrebariUDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:IntrebariUDI" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_IntrebariUDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IntrebariUDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetMaxId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxId" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetMaxId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_RaspunsuriUDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:RaspunsuriUDI" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_RaspunsuriUDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RaspunsuriUDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetIntrebareByNume_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIntrebareByNume" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetIntrebareByNume_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIntrebareByNumeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_LectoriUDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:LectoriUDI" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_LectoriUDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LectoriUDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaLectori_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaLectori" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaLectori_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaLectoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaLectoriPerDisciplina_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaLectoriPerDisciplina" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaLectoriPerDisciplina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaLectoriPerDisciplinaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetLectorByCont_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLectorByCont" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetLectorByCont_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLectorByContResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_TestCreatDeLectorUDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestCreatDeLectorUDI" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_TestCreatDeLectorUDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestCreatDeLectorUDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_IntrebariTesteUDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:IntrebariTesteUDI" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_IntrebariTesteUDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IntrebariTesteUDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetTestCreatDeLectorByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestCreatDeLectorByName" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetTestCreatDeLectorByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestCreatDeLectorByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaTesteCreateDeLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaTesteCreateDeLector" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaTesteCreateDeLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaTesteCreateDeLectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetCursantiCareDauTestulCreatDeLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCursantiCareDauTestulCreatDeLector" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetCursantiCareDauTestulCreatDeLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCursantiCareDauTestulCreatDeLectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaIntrebariTestCreatDeLectorByNumeTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaIntrebariTestCreatDeLectorByNumeTest" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaIntrebariTestCreatDeLectorByNumeTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaIntrebariTestCreatDeLectorByNumeTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_ProgramareTestsUDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProgramareTestsUDI" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_ProgramareTestsUDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProgramareTestsUDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_ListaCursantiTestProgramatsUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCursantiTestProgramatsUID" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_ListaCursantiTestProgramatsUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCursantiTestProgramatsUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetCursantByCont_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCursantByCont" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetCursantByCont_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCursantByContResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetProgramareTestByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgramareTestByName" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetProgramareTestByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgramareTestByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListProgramareTests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProgramareTests" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListProgramareTests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProgramareTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_CurataBazaDeDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CurataBazaDeDate" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_CurataBazaDeDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CurataBazaDeDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramat" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetProgramareTestByNumeTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgramareTestByNumeTest" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetProgramareTestByNumeTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgramareTestByNumeTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_TesteSalvateInBazaDeDateUDI_InputMessage">
+    <wsdl:part name="parameters" element="tns:TesteSalvateInBazaDeDateUDI" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_TesteSalvateInBazaDeDateUDI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TesteSalvateInBazaDeDateUDIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_DeleteFromListaCursantiTestProgramats_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFromListaCursantiTestProgramats" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_DeleteFromListaCursantiTestProgramats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFromListaCursantiTestProgramatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListTesteCreateDeLectorByContLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListTesteCreateDeLectorByContLector" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListTesteCreateDeLectorByContLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListTesteCreateDeLectorByContLectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTest" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLector" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListDisciplineByNumeLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListDisciplineByNumeLector" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListDisciplineByNumeLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListDisciplineByNumeLectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaCapitoleByNumeDisciplina_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCapitoleByNumeDisciplina" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_GetListaCapitoleByNumeDisciplina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCapitoleByNumeDisciplinaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_RegisterLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterLector" />
+  </wsdl:message>
+  <wsdl:message name="IServiciuLectori_RegisterLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterLectorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiciuLectori">
+    <wsdl:operation name="LogareLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/LogareLector" message="tns:IServiciuLectori_LogareLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/LogareLectorResponse" message="tns:IServiciuLectori_LogareLector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/Logare" message="tns:IServiciuLectori_Logare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/LogareResponse" message="tns:IServiciuLectori_Logare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisciplinaById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetDisciplinaById" message="tns:IServiciuLectori_GetDisciplinaById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetDisciplinaByIdResponse" message="tns:IServiciuLectori_GetDisciplinaById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisciplinaByNume_Capitole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetDisciplinaByNume_Capitole" message="tns:IServiciuLectori_GetDisciplinaByNume_Capitole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetDisciplinaByNume_CapitoleResponse" message="tns:IServiciuLectori_GetDisciplinaByNume_Capitole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDiscipline_CapitoleIntrebariRaspunsuri">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaDiscipline_CapitoleIntrebariRaspunsuri" message="tns:IServiciuLectori_GetListaDiscipline_CapitoleIntrebariRaspunsuri_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaDiscipline_CapitoleIntrebariRaspunsuriResponse" message="tns:IServiciuLectori_GetListaDiscipline_CapitoleIntrebariRaspunsuri_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDiscipline">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaDiscipline" message="tns:IServiciuLectori_GetListaDiscipline_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaDisciplineResponse" message="tns:IServiciuLectori_GetListaDiscipline_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisciplinaUDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/DisciplinaUDI" message="tns:IServiciuLectori_DisciplinaUDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/DisciplinaUDIResponse" message="tns:IServiciuLectori_DisciplinaUDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StergeDisciplina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/StergeDisciplina" message="tns:IServiciuLectori_StergeDisciplina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/StergeDisciplinaResponse" message="tns:IServiciuLectori_StergeDisciplina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapitoleUDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/CapitoleUDI" message="tns:IServiciuLectori_CapitoleUDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/CapitoleUDIResponse" message="tns:IServiciuLectori_CapitoleUDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitolByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetCapitolByName" message="tns:IServiciuLectori_GetCapitolByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetCapitolByNameResponse" message="tns:IServiciuLectori_GetCapitolByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitolPentruTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetCapitolPentruTest" message="tns:IServiciuLectori_GetCapitolPentruTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetCapitolPentruTestResponse" message="tns:IServiciuLectori_GetCapitolPentruTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCursanti">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaCursanti" message="tns:IServiciuLectori_GetListaCursanti_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaCursantiResponse" message="tns:IServiciuLectori_GetListaCursanti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CursantiUDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/CursantiUDI" message="tns:IServiciuLectori_CursantiUDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/CursantiUDIResponse" message="tns:IServiciuLectori_CursantiUDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IntrebariUDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/IntrebariUDI" message="tns:IServiciuLectori_IntrebariUDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/IntrebariUDIResponse" message="tns:IServiciuLectori_IntrebariUDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetMaxId" message="tns:IServiciuLectori_GetMaxId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetMaxIdResponse" message="tns:IServiciuLectori_GetMaxId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RaspunsuriUDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/RaspunsuriUDI" message="tns:IServiciuLectori_RaspunsuriUDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/RaspunsuriUDIResponse" message="tns:IServiciuLectori_RaspunsuriUDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIntrebareByNume">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetIntrebareByNume" message="tns:IServiciuLectori_GetIntrebareByNume_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetIntrebareByNumeResponse" message="tns:IServiciuLectori_GetIntrebareByNume_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LectoriUDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/LectoriUDI" message="tns:IServiciuLectori_LectoriUDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/LectoriUDIResponse" message="tns:IServiciuLectori_LectoriUDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaLectori">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaLectori" message="tns:IServiciuLectori_GetListaLectori_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaLectoriResponse" message="tns:IServiciuLectori_GetListaLectori_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaLectoriPerDisciplina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaLectoriPerDisciplina" message="tns:IServiciuLectori_GetListaLectoriPerDisciplina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaLectoriPerDisciplinaResponse" message="tns:IServiciuLectori_GetListaLectoriPerDisciplina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLectorByCont">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetLectorByCont" message="tns:IServiciuLectori_GetLectorByCont_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetLectorByContResponse" message="tns:IServiciuLectori_GetLectorByCont_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCreatDeLectorUDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/TestCreatDeLectorUDI" message="tns:IServiciuLectori_TestCreatDeLectorUDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/TestCreatDeLectorUDIResponse" message="tns:IServiciuLectori_TestCreatDeLectorUDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IntrebariTesteUDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/IntrebariTesteUDI" message="tns:IServiciuLectori_IntrebariTesteUDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/IntrebariTesteUDIResponse" message="tns:IServiciuLectori_IntrebariTesteUDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestCreatDeLectorByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetTestCreatDeLectorByName" message="tns:IServiciuLectori_GetTestCreatDeLectorByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetTestCreatDeLectorByNameResponse" message="tns:IServiciuLectori_GetTestCreatDeLectorByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaTesteCreateDeLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaTesteCreateDeLector" message="tns:IServiciuLectori_GetListaTesteCreateDeLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaTesteCreateDeLectorResponse" message="tns:IServiciuLectori_GetListaTesteCreateDeLector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCursantiCareDauTestulCreatDeLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetCursantiCareDauTestulCreatDeLector" message="tns:IServiciuLectori_GetCursantiCareDauTestulCreatDeLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetCursantiCareDauTestulCreatDeLectorResponse" message="tns:IServiciuLectori_GetCursantiCareDauTestulCreatDeLector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaIntrebariTestCreatDeLectorByNumeTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaIntrebariTestCreatDeLectorByNumeTest" message="tns:IServiciuLectori_GetListaIntrebariTestCreatDeLectorByNumeTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaIntrebariTestCreatDeLectorByNumeTestResponse" message="tns:IServiciuLectori_GetListaIntrebariTestCreatDeLectorByNumeTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProgramareTestsUDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/ProgramareTestsUDI" message="tns:IServiciuLectori_ProgramareTestsUDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/ProgramareTestsUDIResponse" message="tns:IServiciuLectori_ProgramareTestsUDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaCursantiTestProgramatsUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/ListaCursantiTestProgramatsUID" message="tns:IServiciuLectori_ListaCursantiTestProgramatsUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/ListaCursantiTestProgramatsUIDResponse" message="tns:IServiciuLectori_ListaCursantiTestProgramatsUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCursantByCont">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetCursantByCont" message="tns:IServiciuLectori_GetCursantByCont_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetCursantByContResponse" message="tns:IServiciuLectori_GetCursantByCont_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramareTestByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetProgramareTestByName" message="tns:IServiciuLectori_GetProgramareTestByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetProgramareTestByNameResponse" message="tns:IServiciuLectori_GetProgramareTestByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListProgramareTests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListProgramareTests" message="tns:IServiciuLectori_GetListProgramareTests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListProgramareTestsResponse" message="tns:IServiciuLectori_GetListProgramareTests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CurataBazaDeDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/CurataBazaDeDate" message="tns:IServiciuLectori_CurataBazaDeDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/CurataBazaDeDateResponse" message="tns:IServiciuLectori_CurataBazaDeDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramat" message="tns:IServiciuLectori_GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramatResponse" message="tns:IServiciuLectori_GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramareTestByNumeTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetProgramareTestByNumeTest" message="tns:IServiciuLectori_GetProgramareTestByNumeTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetProgramareTestByNumeTestResponse" message="tns:IServiciuLectori_GetProgramareTestByNumeTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TesteSalvateInBazaDeDateUDI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/TesteSalvateInBazaDeDateUDI" message="tns:IServiciuLectori_TesteSalvateInBazaDeDateUDI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/TesteSalvateInBazaDeDateUDIResponse" message="tns:IServiciuLectori_TesteSalvateInBazaDeDateUDI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromListaCursantiTestProgramats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/DeleteFromListaCursantiTestProgramats" message="tns:IServiciuLectori_DeleteFromListaCursantiTestProgramats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/DeleteFromListaCursantiTestProgramatsResponse" message="tns:IServiciuLectori_DeleteFromListaCursantiTestProgramats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListTesteCreateDeLectorByContLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListTesteCreateDeLectorByContLector" message="tns:IServiciuLectori_GetListTesteCreateDeLectorByContLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListTesteCreateDeLectorByContLectorResponse" message="tns:IServiciuLectori_GetListTesteCreateDeLectorByContLector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTest" message="tns:IServiciuLectori_GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTestResponse" message="tns:IServiciuLectori_GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLector" message="tns:IServiciuLectori_GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLectorResponse" message="tns:IServiciuLectori_GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListDisciplineByNumeLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListDisciplineByNumeLector" message="tns:IServiciuLectori_GetListDisciplineByNumeLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListDisciplineByNumeLectorResponse" message="tns:IServiciuLectori_GetListDisciplineByNumeLector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCapitoleByNumeDisciplina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaCapitoleByNumeDisciplina" message="tns:IServiciuLectori_GetListaCapitoleByNumeDisciplina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/GetListaCapitoleByNumeDisciplinaResponse" message="tns:IServiciuLectori_GetListaCapitoleByNumeDisciplina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiciuLectori/RegisterLector" message="tns:IServiciuLectori_RegisterLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiciuLectori/RegisterLectorResponse" message="tns:IServiciuLectori_RegisterLector_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiciuLectori" type="tns:IServiciuLectori">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogareLector">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/LogareLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logare">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/Logare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisciplinaById">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetDisciplinaById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisciplinaByNume_Capitole">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetDisciplinaByNume_Capitole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDiscipline_CapitoleIntrebariRaspunsuri">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaDiscipline_CapitoleIntrebariRaspunsuri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDiscipline">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaDiscipline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisciplinaUDI">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/DisciplinaUDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StergeDisciplina">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/StergeDisciplina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapitoleUDI">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/CapitoleUDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitolByName">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetCapitolByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapitolPentruTest">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetCapitolPentruTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCursanti">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaCursanti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CursantiUDI">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/CursantiUDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntrebariUDI">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/IntrebariUDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxId">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetMaxId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RaspunsuriUDI">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/RaspunsuriUDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIntrebareByNume">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetIntrebareByNume" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LectoriUDI">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/LectoriUDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaLectori">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaLectori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaLectoriPerDisciplina">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaLectoriPerDisciplina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLectorByCont">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetLectorByCont" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCreatDeLectorUDI">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/TestCreatDeLectorUDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntrebariTesteUDI">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/IntrebariTesteUDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestCreatDeLectorByName">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetTestCreatDeLectorByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaTesteCreateDeLector">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaTesteCreateDeLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCursantiCareDauTestulCreatDeLector">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetCursantiCareDauTestulCreatDeLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaIntrebariTestCreatDeLectorByNumeTest">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaIntrebariTestCreatDeLectorByNumeTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgramareTestsUDI">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/ProgramareTestsUDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaCursantiTestProgramatsUID">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/ListaCursantiTestProgramatsUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCursantByCont">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetCursantByCont" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramareTestByName">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetProgramareTestByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListProgramareTests">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListProgramareTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurataBazaDeDate">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/CurataBazaDeDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramat">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaIntrebariRaspunsuriTestProgramatByNumeTestProgramat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramareTestByNumeTest">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetProgramareTestByNumeTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TesteSalvateInBazaDeDateUDI">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/TesteSalvateInBazaDeDateUDI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromListaCursantiTestProgramats">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/DeleteFromListaCursantiTestProgramats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListTesteCreateDeLectorByContLector">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListTesteCreateDeLectorByContLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTest">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaCursantiCareAuDatTestulCreatDeLectorByNumeTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLector">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaTesteSalvateInBazaDeDateByID_CURSANT_ID_TestCreatDeLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListDisciplineByNumeLector">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListDisciplineByNumeLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCapitoleByNumeDisciplina">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/GetListaCapitoleByNumeDisciplina" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterLector">
+      <soap:operation soapAction="http://tempuri.org/IServiciuLectori/RegisterLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciuLectori">
+    <wsdl:port name="BasicHttpBinding_IServiciuLectori" binding="tns:BasicHttpBinding_IServiciuLectori">
+      <soap:address location="http://localhost:8080/ServiciuLectori/ServiciuLectori" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1228 @@
+<radacina>
+<Disciplina name="Topici speciale .NET Framework">
+	<capitol name="Entity Framework">
+		<intrebareGrupare>
+			<intrebare>Ce este Entity Framework?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>ORM (object relational mapping)</raspuns>
+				<motivare>ADO.NET Entity Framework este un ORM (object relational mapping) care creaza un model abstract de nivel inalt peste ADO.NET</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Extensie ADO.NET</raspuns>
+				<motivare>Entity Framework este o extensie a lui ADO.NET care furnizeaza un mecanism automat pentru acces si stocare a informatiilor in baza de date</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Foloseste scalari (date la nivel de coloana dintr-o tabela)</raspuns>
+				<motivare>ADO.NET Entity Framework lucreaza cu obiecte (din baza de date se returneaza obiecte)</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Cum se implementeaza in Entity Framework relatiile many-to-many dintre clasele C1 si C2?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Se adauga in clasa C1 proprietatea public virtual ICollection &lt;C2&gt; C2 { get; set; }</raspuns>
+				<motivare>In fiecare clasa se defineste o proprietate de navigare de tip colectie a clasei cu care este in relatie</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Se adauga in clasa C2 proprietatea public virtual ICollection &lt;C1&gt; C1 { get; set; }</raspuns>
+				<motivare>In fiecare clasa se defineste o proprietate de navigare de tip colectie a clasei cu care este in relatie</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Se creaza clasa C1manyC2 care va contine doua obiecte public virtual ICollection &lt;C1&gt; si public virtual ICollection&lt;C2&gt;. </raspuns>
+				<motivare>In fiecare clasa se defineste o proprietate de navigare de tip colectie a clasei cu care este in relatie</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Se adauga doar in clasa C2 proprietatea public virtual ICollection&lt;C1&gt; C1 { get; set; }</raspuns>
+				<motivare>In fiecare clasa se defineste o proprietate de navigare de tip colectie a clasei cu care este in relatie</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Cum implementeaza Entity Framework relatiile one-to-many dintre clasele M1 si M2?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Se adauga in clasa M1 proprietatea public virtual ICollection &lt;M2&gt; M2 { get; set; }</raspuns>
+				<motivare>Un obiect de tipul M1 poate avea asociate mai multe obiecte de tip M2, deci in clasa M1 va trebui sa avem definita o proprietate de navigare de tip colectie.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Se adauga in clasa M2 proprietatea public virtual M1 M1 { get; set; }</raspuns>
+				<motivare>Un obiect M2 face referire la un singur obiect de tip M1, deci in clasa M2 se defineste o proprietate de tip referinta.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Se adauga in clasa M2 proprietatea public virtual ICollection&lt;M1&gt; M1 { get; set; }</raspuns>
+				<motivare>Relatia este one-to-many intre clasele M1 si M2, aceasta proprietate ar fi fost corecta daca relatia ar fi fost one-to-many intre clasele M2 si M1</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Se adauga in clasa M1 public virtual M2 M2 { get; set; }</raspuns>
+				<motivare>Relatia este one-to-many intre clasele M1 si M2, deci M1 contine mai multe obiecte de tip M2, iar M2 este de tip referinta catre M1</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt adevarate in legatura cu clasa DbContext?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Poate scadea performanta aplicatiei/</raspuns>
+				<motivare>Performanta aplicatiei poate scadea in cazul cand incarcam mai multe obiecte din cadrul aceluiasi context.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Poate furniza metode de acces direct asupra bazei de date.</raspuns>
+				<motivare>Prin proprietatea Database obtinem un obiect Database. Acest obiect expune metode ce pot executa comenzi SQL(DDL/DML) la nivel de baza de date.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Face commit asupra bazei de date.</raspuns>
+				<motivare>Dupa ce au fost efectuate diferite operatii(insert/update/delete) asupra bazei de date, pentru a salva modificarile se apeleaza metoda SaveChanges().</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt adevarate?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>In Entity Framework putem incarca datele in memorie evitand iterarea unei cereri</raspuns>
+				<motivare>Folosind metoda Load() din DbContext.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Eagerly loading este declarata implicit la crearea modelului.</raspuns>
+				<motivare>Lazily loading este comportarea implicita.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Explicitly loading incarcarea anumitor entitati relationate, partial sau in totalitate.</raspuns>
+				<motivare>Explicitly loading renuntarea la incarcarea anumitor entitati relationate</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt adevarate?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Metoda lazily loading permite EF sa incarce datele relationate intr-o singura cerere trimisa la baza de date. Metoda folosita in acest caz este Include().</raspuns>
+				<motivare>Modelul lazily loading presupune crearea unui proxy dinamic de catre EF. Acest proxy dinamic va crea si incarca toate tipurile cu care relationeaza tipul dat.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Metoda eagerly loading incarca incarca toate tipurile cu care relationeaza tipul dat.</raspuns>
+				<motivare>Metoda eagerly loading incarcarea anumitor entitati relationate, partial sau in totalitate</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Incarcarea datelor relationale in cazul metodei explicit loading se face se face automat dupa ce datele de principale au fost incarcate.</raspuns>
+				<motivare>Incarcarea datelor relationale in cazul metodei explicit loading nu se face automat. Metoda folosita pentru incarcarea explicita a datelor este DbContext.Entry() ce returneaza DbEntityEntry.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+				
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele abordari sunt suportate de Entity Framework?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Code First</raspuns>
+				<motivare>Dezvoltatorul scrie toate clasele (POCO) modelului si clasa derivata din DbContext cu toate entitatile necesare si apoi cu ajutorul mediului de dezvoltare se creaza si genereaza baza de date, tabelele din baza de date si informatiile aditionale necesare pentru Entity Framework.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Database First</raspuns>
+				<motivare>Baza de date este creata si apoi se genereaza modelul logic ce contine tipurile folosite in logica aplicatiei. Acest lucru se face folosind mediul de dezvoltare VStudio.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Model First</raspuns>
+				<motivare>Mediul de dezvoltare permite dezvoltarea permite dezvoltarea unei diagrame a modelului aplicatiei si pe baza acesteia se va crea si genera baza de date, tabelelle din baza de date si informatiile aditionale necesare pentru Entity Framework.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Cum putem dezactiva lazy loading folosind DbContext?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>myDBContext.Database.LazyLoadingEnabled = false;</raspuns>
+				<motivare>Proprietatea Database returneaza un obiect de tip Database, astfel putem lucra direct cu baza de date.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>myDBContext.Configuration.LazyLoadingEnabled = false;</raspuns>
+				<motivare>Spatiul de nume System.Data.Entity.Infrastructure.DbContextConfiguration contine proprietatea LazyLoadingEnabled care poate fi setata pe false sau true.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>myDBContext.LazyLoadingEnabled = false;</raspuns>
+				<motivare>Spatiul de nume System.Data.Entity.Infrastructure nu confine proprietatea LazyLoadingEnabled. </motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt adevarate?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Fiecare tabel adaugat la un model de date trebuie sa aiba cheie primara.</raspuns>
+				<motivare>Fiecare entitate trebuie sa aiba o cheie. Cand folosim Entity Designer pentru a crea sau actualiza un model, clasele care sunt generate mostenind EntityObject necesita proprietatea EntityKey.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Entity Framework poate crea tabele si coloane cu nume diferit decat cel definit in clasa.</raspuns>
+				<motivare>Prin conventie, Entity Framework defineste numele tabelei si al coloanelor bazandu-se pe numele proprietatilor din clasa. Folosind adnotarile [Table] si [Column] putem spune framework-ului sa foloseasca nume diferite.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Adnotarile sunt folosite pentru a defini cheia publica.</raspuns>
+				<motivare>Adnotarea [Key] din DataAnnotations este folosita pentru a defini cheia primara pentru o tabela.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt adevarate?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Se spune ca Entity Framework se executa incet.</raspuns>
+				<motivare>In mod implicit Entity Framework foloseste foloseste lazy loading. Dotat cu acest comportament implicit, daca incarcam un numar mare de inregistrari si in mod deosebit acestea au chei straine, putem avea probleme de performanta.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Cererile se executa asupra modelului, nu asupra bazei de date. </raspuns>
+				<motivare>Folosind informatiile din modelul de mapare si cel de memorare se vor genera comenzi SQL specifice pentru a incarca in memorie datele din baza de date.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Relatia many-to-many dintre clasele M1 si M2 are ca efect construirea tabelelor M1 si M2.</raspuns>
+				<motivare>Relatia many-to-many dintre doua tabele are ca efect construirea unei tabele suplimentare, de legatura, intre tabelele implicate in aceasta relatie. Peacest exemplu se vor construi tabelele M1, M2 si M1M2( tabela de legatura).</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt adevarate?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Namespace-ul System.Transactions furnizeaza un singur model de programare explicit bazat pe clasa Transaction.</raspuns>
+				<motivare>Infrastructura System.Transactions furnizeaza un model de programare explicit bazat pe clasa Transaction si un model de programare implicit bazat pe clasa TransactionScope, in acest din urma caz tranzactiile sunt gestionate in mod automat de infrastructura.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Tranzactiile se aplica pe multimea de obiecte din Entity Framework.</raspuns>
+				<motivare>TransactionScope face un bloc de cod ca fiind tranzactional. Tranzactiile se aplica la nivel de baza de date si nu la multimea de obiecte din Entity Framework.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Daca in blocul de cod unde se foloseste TransactionScope apare o exceptie se va executa RollBack().</raspuns>
+				<motivare>Metoda RollBack() apartine clasei Transaction si nu TransactionScope.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt corecte?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Entity Framework jurnalizeaza modificarile efectuate folosind snapshot change tracking.</raspuns>
+				<motivare> Cand Entity Framework are nevoie sa stie ce schimbari au fost facute asupra obiectelor din memorie, va scana fiecare obiect si-i va compara valoarea cu cea existenta in snapshot. Acest proces de scanare se realizeaza prin apelul metodei DetectChanges din ChangeTracker.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Entity Framework jurnalizeaza modificarile efectuate folosind Change tracking proxies.</raspuns>
+				<motivare>Change tracking proxies creaza proxy in mod dinamic pentru obiectele create din DbContext si notifica contextul asupra modificarilor. Acest mecanism cere sa structuram clasele din context astfel incat toate proprietatile sa fie virtuale, read/write si clasele sa nu fie sealed. Modificarile in clase trebuiesc facute manual.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Detectarea modificarilor poate fi setata pe on sau off astfel: context.Settings.AutoDetectChangesEnabled = true|false; </raspuns>
+				<motivare>Spatiul de nume System.Data.Entity.Infrastructure.DbContextConfiguration contine proprietatea AutoDetectChangesEnabled, deci comanda corecta va fi context.Configuration.AutoDetectChangesEnabled = true|false;</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt adevarate?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Entity Framework lucreaza doar cu SQL Server.</raspuns>
+				<motivare>Entity Framework lucreaza cu diferite baze de date cum ar fi  Oracle, DB2, MYSQL, SQL Server etc.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Entity Framework genereaza un fisier .dbml pentru a mentine conexiunea.</raspuns>
+				<motivare>Entity Framework genereaza un fisier .edmx initial. Relatia este mentinuta folosind 3 fisiere diferite .csdl, .msl si .ssdl</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Entity Framework poate interoga datele folosind DataContext.</raspuns>
+				<motivare>Entity Framework ne permite sa interogam datele folosind EntitySQL, ObjectContext si DbContext.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Cum putem imbunatati performanta in Entity Framework?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Evitam sa punem toate obiectele bazei de date intr-un singur model entitate.</raspuns>
+				<motivare>Entity Framework specifica o singura unitate de lucru, nu intreaga noastra baza de date. Daca avem mai multe obiecte in baza de date care nu sunt conectate, incercam sa cream instante separate ale modelului pentru obiectele din baza de date. </motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Dezactivam change tracking pentru entitate daca nu avem nevoie.</raspuns>
+				<motivare>De fiecare data cand obtinem date doar pentru a le citi si nu pentru a le modifica nu este nevoie sa urmarim obiectul. Dezactivam folosind o instanta a contextului astfel:  context."NumeTabeka".AsNoTracking();</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Alegem Colectii apropriate pentru a manipula datele.</raspuns>
+				<motivare>In LINK avem colectiile Var, IEnumerable, IQueryable, IList pentru a manipula datele. Fiecare colectie are importanta si impactul performantei asupra interogarii, deci trebui avut grija cand folosim aceste colectii pentru a manipula date. </motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt adevarate?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>EDMX este un fisier JSON care contine toate detaliile de mapare ale obiectelor. Fișierul EDMX este impărtit în trei secțiuni: CSDL, SSDL și MSL.</raspuns>
+				<motivare>EDMX (Entity Data Model XML) este un fisier XML care contine toate detaliile de mapare ale obiectelor. Fisierul de EDMX este impartită în trei sectiuni: CSDL, SSDL si MSL.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>CSDL (Conceptual Schema definition language) defineste maparea cu structura de date RDBMS. </raspuns>
+				<motivare>CSDL (Conceptual Schema definition language) este conceptul abstract care este expus de aplicatie.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>SSDL (Storage Schema Definition Language) defineste maparea cu structura de date RDBMS</raspuns>
+				<motivare>SSDL descrie modelul de stocare. Acesta reprezinta baza de date.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+	</capitol>
+	<capitol name="WCF">
+		<intrebareGrupare>
+			<intrebare>Cum se poate expune metadata pentru un serviciu WCF?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Folosind fisierul de configurare packages.config</raspuns>
+				<motivare>Fisierul packages.config contine informatii despre anumite pachete folosite in aplicatie si/sau instalate cu ajutorul utilitarului NuGet packages</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Folosind fisierul de configurare app.config</raspuns>
+				<motivare>Se defineste un nou endpoint &lt;endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange"/&gt; iar intre tagurile &lt;behaviour ... behaviour&gt; se adauga un nou camp numit &lt;serviceMetadata httpGetEnabled ="true" httpsGetEnabled="true"/&gt;</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Clasa ServiceHost poate expune un endpoint pentru a avea acces la medadate in timpul rularii.</raspuns>
+				<motivare>Se creaza o instanta a clasei ServiceMetadataBehavior numita X. Se seteaza proprietatea de schimb: X.HttpGetEnabled = true; iar in descrierea hostului se adauga noul comportament:host.Description.Behaviors.Add(X); </motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>De ce folosim WCF? sau Care sunt avantajele folosirii WCF?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Sprijină arhitectura orientata pe servicii</raspuns>
+				<motivare>Orientarea pe serviciu este avantajul principal al WCF. Putem construi usor aplicatii orientate pe servicii folosind WCF.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Un serviciu poate servi mai multi clienti.</raspuns>
+				<motivare>Mai multi clienti pot interactiona cu acelasi serviciu folosind mechanisme diferite de comunicare. Un singur serviciu poate avea mai multe endpoint-uri. Deci dezvoltatoeul va scrie cod pentru serviciu o singura data si doar schimband configurarea( definind alt endpoint), serviciul va fi disponibil pentru alti clienti.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Extensibil</raspuns>
+				<motivare>Extensibilitatea este un alt avantaj cheie al WCF. Putem personaliza cu usurinta un "service behaviour" daca este necesar.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>WCF este acronimul pentru: </intrebare>
+			<raspunsMotivate> 
+				<raspuns>Windows Communication Framework</raspuns>
+				<motivare>WCF este acronimul de la Windows Communication Foundation</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Windows Communication Foundation</raspuns>
+				<motivare>Windows Communication Foundation este un framework pentru a construi aplicatii orientate pe servicii.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Windows Connection Framework</raspuns>
+				<motivare>WCF este acronimul de la Windows Communication Foundation</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt corecte?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>In WCF clientii interactioneaza cu serviciile in mod direct.</raspuns>
+				<motivare>Clientii nu interactioneaza cu serviciile in mod direct, se utilizeaza un proxy chiar daca sunt in acelasi AppDomain (acest lucru nu este valabil in .NET Remoting)</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Adresa unui serviciu trebui sa aiba in componenta sa obligatoriu si un port liber.</raspuns>
+				<motivare>Adresa unui serviciu are totdeauna formatul: [transport]://[machine or domain][:optional port]/[optional URI], iar doua exemple de adrese ale unui serviciu sunt urmatoarele: http://localhost sau http://localhost:8001/MyService </motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>In momentul cand definim un contract, adnotarea [OperationContract] poate fi aplicata atat metodelor publice cat si celor private.</raspuns>
+				<motivare>Nu conteaza daca o metoda este publica sau privata, adnotarea [OperationContract] face ca atat metodele publice cat si cele private sa fie vizibile clientului care acceseaza serviciul.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Partile componente ale unui serviciu sunt: </intrebare>
+			<raspunsMotivate> 
+				<raspuns>Adresa</raspuns>
+				<motivare>Furnizeaza locatia unde se gaseste serviciul si protocolul sau schema de transport pentru a comunica cu serviciul.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Binding</raspuns>
+				<motivare>Binding-urile definesc mecanismul de comunicare ce trebuie folosit cand comunicam cu un endpoint si modul de conexiune la un endpoint. </motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Contract</raspuns>
+				<motivare>In WCF, toate serviciile expun contracte. Contractul este folosit pentru a descrie ceea ce face serviciul.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele contracte sunt definite de catre serviciul WCF?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Contracte pentru servicii - [ServiceContract]</raspuns>
+				<motivare>Descrie operatiile din cadrul serviciului pe care le poate executa clientul.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Contracte de date - [DataContract]</raspuns>
+				<motivare>Defineste tipurile de date ce sunt transferate la si de la serviciu.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Contracte pentru erori - [FaultContract]</raspuns>
+				<motivare>Defineste erorile semnalate de serviciu si modul cum serviciul manipuleaza si propaga erorile catre clienti.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Contracte pentru mesaj - [MessageContract]</raspuns>
+				<motivare>Contractul pentru mesaj – furnizeaza un control precis asupra header-ului si corpului mesajului SOAP.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Cum trebuie adnotate clasele POCO din Entity Framework pentru a putea crea un serviciu WCF?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Elementele clasei trebuie adnotate cu eticheta [DataMember].</raspuns>
+				<motivare>Elementele trebuie serializare, pe fiecare element va trebui adaugata aceasta eticheta.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Clasa trebuie adnotata cu eticheta [DataContract].</raspuns>
+				<motivare>Se adauga referinta la namespace-ul System.Runtime.Serialization si se adauga aceasta eticheta pentru serializare.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Metodele claselor POCO trebuie adnotate cu eticheta [MethodContract].</raspuns>
+				<motivare>Cloasele POCO sunt "curate", pentru metode se defineste o interfata care se implementeaza la randul ei intr-o clasa. Eticheta [MethodContract] nu este definita.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care sunt pasii necesari implementarii unei tranzactii in WCF?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Sesiune pentru serviciu: [ServiceContract(SessionMode=SessionMode.Required)]</raspuns>
+				<motivare>Serviciul are nevoie de sesiune pentru ca aceasta informatie va fi partajata intre coordonator (in mod obisnuit clientul) si serviciile participante</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Tranzactia pentru operatie: [OperationBehavior(TransactionScopeRequired=true)].</raspuns>
+				<motivare>Operatia trebuie sa ceara o tranzactie.. Aceasta va crea o noua tranzactie daca nu e deja creata.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Tranzactia trebuie plasata in headerul mesajului: [OperationContract(TransactionFlowOption = TransactionFlowOption.Allowed)].</raspuns>
+				<motivare>Operatia trebuie sa permita ca informatia despre tranzactie sa fie plasata in antetul (header) mesajului.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>In mesajul SOAP trebui sa fie informatii despre tranzactie: (Binding definition) TransactionFlow=true</raspuns>
+				<motivare>Binding-ul trebuie sa permita tranzactia astfel incat canalul sa poata sa puna informatiadespre tranzactie in header SOAP. Binding-ul trebuie sa suporte sesiuni (wsHttpBinding suporta sesiuni, httpBinding nu suporta sesiuni).</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Clientul trebuie sa foloseasca un domeniu al tranzactiei: TransactionScope.</raspuns>
+				<motivare>Acesta trebuie sa apeleze TransactionScope.Close() pentru ca modificarile sa devinaefective (commit).</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Cum se poate obtine metadata unui serviciu WCF pentru un client?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Folosind interfata din Visual Studio.</raspuns>
+				<motivare>In client se da click dreapta pe proprietatea References si se alege Add Service Reference, iar in campul Address se adauga adresa serviciului pentru care dorim metadata.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Folosind utilitarul svcutil.exe</raspuns>
+				<motivare>Acest tool va descarca de la adresa indicata proxi-ul si fisierul app.config; Aceste fisiere se copie in folderul clientului.Astfel am obtinut metadata pentru serviciul nostru.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>In client se adauga referinta la Assembliul ServiceMetadata si se instantiaza clasa Metadata, iar in constructor ca argument se paseaza un string ca fiind adresa serviciului.</raspuns>
+				<motivare>Metadata unui serviciu se obtine folosind interfata Visual Studio sau utilitarul svcutil.exe</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Cum se poate rezolva problema referintelor circulare in contextul Entity Framework si WCF?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Se seteaza proxy dinamic pentru model si se inhiba "lazy loading".</raspuns>
+				<motivare>In constructorul modelului se adauga urmatoarele segvente de cod: Configuration.LazyLoadingEnabled = false; Configuration.ProxyCreationEnabled = false;</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Clasele POCO, precum si datele acestora trebuie adnotate</raspuns>
+				<motivare>Clasele POCO se adnoteaza cu [DataContract(IsReference=true)], iar datele membru cu [DataMember]</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Se adauga referinta la assembly-ul System.ServiceWeb</raspuns>
+				<motivare>Pentru serializare se adauga referinta la System.Runtime.Serialization</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Instanta clasei care implementeaza contractul trebui sa fie de tip Single.</raspuns>
+				<motivare>Clasa se adnoteaza cu [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele afirmatii sunt adevarate? </intrebare>
+			<raspunsMotivate> 
+				<raspuns>Operatia de tipul one-way este neblocanta.</raspuns>
+				<motivare>Dupa ce clientul initiaza apelul, WCF genereaza un mesaj de tip cerere (request message) care nu e corelat cu un raspuns catre client.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Pentru operatiile de tip duplex se definesc doua endpoint-uri pe server.</raspuns>
+				<motivare>Pentru acest tip de operatii se defineste un endpoint atat pe server cat si pe client.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>HTTP poate fi utilizat pentru callback.</raspuns>
+				<motivare>HTTP nu poate fi utilizat pentru callback, deci binding-urile basicHttpBinding si wsHttpBinding nu pot fi utilizate in comunicarea bidirectionala.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care dintre urmatoarele moduri pot fi folosite la nivel de server?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Single</raspuns>
+				<motivare>O instanta a clasei serviciului serveste toate cererile ce vin de la clienti. Acest mod implementeaza un singleton. </motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>PerCall</raspuns>
+				<motivare>O instanta a clasei serviciului este creata pentru fiecare cerere.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>PerSession</raspuns>
+				<motivare>O instanta a clasei serviciului este creata pentru fiecare sesiune a clientului. Cand folosim canale fara sesiune, toate serviciile se comporta ca PerCall chiar daca am specificat PerSession</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Care Dintre urmatoarele valori pot fi folosite pentru a controla comportarea serviciului?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Single</raspuns>
+				<motivare>Numai un fir la un moment dat poate accesa clasa serviciului. Este modul cel mai sigur de executie.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Reentrant.</raspuns>
+				<motivare> Numai un fir la un moment dat poate accesa clasa serviciului, dar firul poate parasi clasa si poate reveni mai tarziu pentru a-si continua executia.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Multiple</raspuns>
+				<motivare>Fire multiple pot accesa clasa serviciului in mod simultan. Clasa trebuie sa fie construita thread-safe. </motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Cum sunt mesajele din WCF by default?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>De tip xml</raspuns>
+				<motivare>SoapFormatter – foloseste formatul XML SOAP specific pentru .NET</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>De tip JSON</raspuns>
+				<motivare>In WCF toate mesajele sunt de tip SOAP.</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>De tip SOAP</raspuns>
+				<motivare>.NET furnizeaza API separat pentru comunicatii bazate pe SOAP in vederea unei interoperabilitati maxime (Web Services)</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Cum isi poate publica metadata un serviciu WCF?</intrebare>
+			<raspunsMotivate> 
+				<raspuns>Utilizand protocolul HTTP-GET</raspuns>
+				<motivare>Daca schimbul de metadata este activat peste HTTP-GET putem folosi in browser adresa serviciului, deex. http://localhost/MyService/Service1.svc si ne dam seama daca serviciul este instalat corect.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Folosind un endpoint dedicat</raspuns>
+				<motivare>Informatiile se completeaza in fisierul app.config; WCF furnizeaza elemente de transport dedicate pentru HTTP, HTTPS, TCP si IPC.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>Implementam interfata IMetadataExchange</raspuns>
+				<motivare>WCF implementeaza aceasta interfata si expune endpoint-ul pentru schimbul de metadata.</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+	</capitol>
+	
+	<capitol nume="WPF">
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 1</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 2</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 3</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 4</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 5</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 6</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 7</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 8</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 9</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 10</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 11</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 12</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 13</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 14</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare WPF 15</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+	</capitol>
+	
+	<capitol name="ASP.NET">
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 1</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 2</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 3</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 4</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 5</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 6</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 7</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 8</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 9</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 10</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 11</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 12</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 13</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 14</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+		<intrebareGrupare>
+			<intrebare>Intrebare ASP.NET 15</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+		
+	</capitol>
+	
+</Disciplina>
+
+<Disciplina name="Disciplina Test 1">
+	<capitol name="Capitol I">
+			<intrebareGrupare>
+			<intrebare>Intrebare 1</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+	</capitol>
+	
+		<capitol name="Capitol II">
+			<intrebareGrupare>
+			<intrebare>Intrebare 1</intrebare>
+			<raspunsMotivate> 
+				<raspuns>R1</raspuns>
+				<motivare>M1</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R2</raspuns>
+				<motivare>M2</motivare>
+				<corect>f</corect>
+			</raspunsMotivate>
+			<raspunsMotivate> 
+				<raspuns>R3</raspuns>
+				<motivare>M3</motivare>
+				<corect>t</corect>
+			</raspunsMotivate>
+		</intrebareGrupare>
+	</capitol>
+</Disciplina>
+</radacina>

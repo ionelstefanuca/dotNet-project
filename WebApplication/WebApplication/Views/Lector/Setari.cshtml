@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Setari";
+}
+<ul class="nav nav-tabs">
+    <li><a href="../Lector/AdaugaDisciplina">Gestionare Discipline</a></li>
+    <li><a href="../Lector/GestionareCursanti">Gestionare Cursanti</a></li>
+    <li><a href="../Lector/AdaugaIntrebari">Adauga Intrebari</a></li>
+    <li><a href="../Lector/ListareIntrebari">Listare Intrebari</a></li>
+    <li class="active"><a href="../Lector/Setari">Setari</a></li>
+    <li><a href="../Lector/ImportaIntrebari">Import</a></li>
+    <li><a href="../Lector/GenereazaTest">Genereaza Test</a></li>
+    <li><a href="../Lector/CreazaGrupaTest">Creaza Grupa Test</a></li>
+    <li><a href="../Lector/CorecteazaTest">Corecteaza test</a></li>
+</ul>
+
+<br />
+@{ 
+    if (ViewBag.MesajCurataBazaDeDate!=null)
+    {
+        <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <strong>Gata!</strong>Baza de date a fost curatata cu succes.
+        </div>
+    }
+}
+<br />
+<form class="form-inline" role="form" method="post">
+    <button type="submit" class="btn btn-default" name="curataBazaDeDate" value="true">Curata baza de date</button>
+</form>
